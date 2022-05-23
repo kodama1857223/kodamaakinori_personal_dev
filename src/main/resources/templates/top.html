@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Top</title>
+    </head>
+    <body>
+    
+       <span th:replace="menu"></span>
+        
+        <hr>
+        
+        <h2><span th:text="${session.name}"></span>さん、ようこそ！</h2>
+        <h2>ここはショッピングサイトです！</h2>
+        
+        <hr>
+        
+        <span th:replace="logout"></span>
+
+    </body>
+</html>

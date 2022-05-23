@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Confirmation</title>
+    </head>
+    <body>
+       <span th:replace="menu"></span>
+       
+       <hr>
+       
+       <h3>下記の内容で注文を行いますか？</h3>
+       <h3>ご注文商品</h3>
+       <span th:replace="cartItem"></span>
+       
+       <hr>
+       
+       <h3>お客様情報</h3>
+       
+       <form action="/order/doOrder" method="post">
+            <table>
+            <tr>
+                <td>お名前</td>
+                <td th:text="${session.customerInfo.name}"></td>
+            </tr>
+            <tr>
+                <td>住所</td>
+                <td th:text="${session.customerInfo.address}"></td>
+            </tr>
+            <tr>
+                <td>電話番号</td>
+                <td th:text="${session.customerInfo.tel}"></td>
+            </tr>
+            <tr>
+                <td>e-mail</td>
+                <td th:text="${session.customerInfo.email}"></td>
+            </tr>    
+            </table>
+            <input type="submit" value="この内容で注文">
+       
+       </form>
+       
+       <hr>
+       
+       <span th:replace="logout"></span>
+       
+    </body>
+</html>

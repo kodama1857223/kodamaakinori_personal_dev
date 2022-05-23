@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Top</title>
+    </head>
+    <body>
+<a href="/items">全商品</a>
+<a th:each="c:${session.categories}" th:href="'/items/'+${c.code}">
+<span th:text="${c.name}" style="padding-left:10px;"></span>
+</a>
+<a href="/cart" style="padding-left:10px;">カートを見る</a>
+
+<span th:text="'('+${session.name}+'さんがログイン中)'"></span>
+ </body>
+</html>

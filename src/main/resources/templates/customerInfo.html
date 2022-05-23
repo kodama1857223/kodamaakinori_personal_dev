@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>CustomerInfo</title>
+    </head>
+    <body>
+        <span th:replace="menu"></span>
+        
+        <hr>
+        
+        <h3>ご注文商品</h3>
+        <span th:replace="cartItem"></span>
+        
+        <hr>
+        
+        <h3>お客様情報を入力してください</h3>
+        
+        <form action="/order/confirm" method="post">
+            <table>
+            <tr>
+                <td>お名前</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>住所</td>
+                <td><input type="text" name="address"></td>
+            </tr>
+            <tr>
+                <td>電話番号</td>
+                <td><input type="text" name="tel"></td>
+            </tr>
+            <tr>
+                <td>e-mail</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            </table>
+            <input type="submit" value="確認画面へ">
+            </form>
+            
+            <hr>
+            
+            <span th:replace="logout"></span>
+            
+    </body>
+</html>
